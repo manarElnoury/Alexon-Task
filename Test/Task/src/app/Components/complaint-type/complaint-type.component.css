@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal&display=swap');
+
+/* page body*/
+.layout {
+    background: #FDFDFD;
+    height: 100%;
+}
+
+/* header*/
+.header {
+    height: 134px
+}
+
+.Rectangle1 {
+    height: 116px;
+    background: #F4F4F4;
+    box-shadow: 0px 4px 8px 0px #B5B5B540;
+}
+
+/* setting buttons */
+.headerBtns {
+    display: flex;
+    gap: 19px;
+    position: absolute;
+    left: 116px;
+    top: 34px;
+}
+
+.headerBtns button {
+    width: 62px;
+    height: 48px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #E1E3E6;
+    box-shadow: 0px 4px 2px -2px rgba(27, 46, 94, 0.02);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.headerBtns button span {
+    padding: 0 10px;
+    font-family: 'Tajawal';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.bellIcon {
+    font-size: 18px;
+    color: #00000099;
+}
+
+.logo img {
+    width: 80px;
+    height: 157px;
+    margin-top: -11px
+}
+
+/* اختر نوع الشكوي */
+.complaintType p {
+    font-family: 'Tajawal';
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 29px;
+    color: #000000DE;
+    margin-top: 80px;
+}
+
+.complaint {
+    cursor: pointer;
+    height: 100%;
+    border-radius: 4px;
+    border: 1px solid #8C8C8C;
+    background: #FBFBFB;
+}
+
+.complaint .icons {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #E2E2E2;
+}
+
+.complaint .icons i {
+    font-size: 18px;
+   
+}
+
+.complaint p {
+    font-family: 'Tajawal';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 22px;
+    font-style: normal;
+  
+}
+
+.confirmbtn {
+   width: 100%;
+    height: 54px;
+    border-radius: 4px;
+    border: 2px solid #C0C0C0;
+    background-color: #FDFDFD;
+    margin-bottom:88px;
+}
+
+.complaint.active {
+    background-color: #33835C;
+    color: #fff;
+}
+
+.confirmbtn.active {
+    background-color: #33835C;
+    color: #fff;
+}

@@ -1,0 +1,83 @@
+/* page body*/
+.layout {
+    background: #FDFDFD;
+    height: 100%;
+}
+
+/*complaintState*/
+.complaintState {
+    border-radius: 14px;
+}
+
+.complaintState .title {
+    font-family: 'Tajawal';
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+}
+
+.complaintState .num {
+    font-family: 'Tajawal';
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+}
+
+.newComplaint {
+    color: rgba(0, 0, 0, 0.87);
+    text-align: right;
+    font-family: 'Tajawal';
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.filter {
+    color: rgba(0, 0, 0, 0.47);
+    text-align: right;
+    font-family: 'Tajawal';
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.selectbox {
+    background-color: #E7FFF3;
+    direction: rtl;
+    color: rgba(0, 0, 0, 0.87);
+    font-family: 'Tajawal';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+table {
+    direction: rtl;
+    width: 1320px;
+}
+
+thead tr {
+    height: 70px;
+    color: white;
+    background: #33835C;
+    font-family: 'Tajawal';
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+}
+
+.rows {
+    height: 73px;
+    color: rgba(0, 0, 0, 0.77);
+    text-align: center;
+    font-family: 'Tajawal';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border-bottom: 1px solid#F6F6F6;
+    border-collapse: collapse;
+}
+
+.active {
+    background: #F6F6F6
+}

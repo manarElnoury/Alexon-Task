@@ -1,0 +1,139 @@
+<div class="layout">
+                   <!-- Header component-->
+  <app-header></app-header>
+
+  <div style="clear:both ;height: 30px;"></div>
+  <div
+    class=" row row-cols-lg-5 row-cols-md-2 row-cols-sm-1 px-4  mx-5 my-5  gy-4 justify-content-around flex-row-reverse mt-5 ">
+                     <!-- شكاوي جديدة-->
+
+    <div class=" d-flex flex-column align-items-center gap-1 complaintState " style="background-color: #FDBE7B;">
+      <div class=" d-flex align-items-center  justify-content-center mt-3  ">
+        <p class="text-center text-white title ">شكاوي جديدة</p>
+      </div>
+      <div>
+        <p class="text-center text-white num ">150</p>
+      </div>
+    </div>
+                      <!-- شكاوي تم اعتمادها -->
+
+    <div class=" d-flex flex-column align-items-center  gap-1 complaintState" style="background-color: #12AA77;">
+      <div class=" d-flex align-items-center  justify-content-center mt-3">
+        <p class="text-center text-white title ">شكاوي تم اعتمادها </p>
+      </div>
+      <div>
+        <p class="text-center text-white num">150</p>
+      </div>
+    </div>
+                     <!-- الشكاوي المرفوضة-->
+
+    <div class=" d-flex flex-column align-items-center  gap-1 complaintState" style="background-color: #FF6A6F;">
+      <div class=" d-flex align-items-center  justify-content-center mt-3">
+        <p class="text-center text-white title"> الشكاوي المرفوضة</p>
+      </div>
+      <div>
+        <p class="text-center text-white num">44</p>
+      </div>
+    </div>
+                    <!-- الشكاوي المرفوضة-->
+
+    <div class=" d-flex flex-column align-items-center  gap-1 complaintState " style="background-color: #43A7D8;">
+      <div class=" d-flex align-items-center  justify-content-center mt-3">
+        <p class="text-center text-white title">الشكاوي المرفوضة</p>
+      </div>
+      <div>
+        <p class="text-center text-white num">44</p>
+      </div>
+    </div>
+
+  </div>
+               <!-- New Complaint and Table filters-->
+                 <!--الشكاوي الجديدة-->
+  <div
+    class=" row row-cols-lg-5 row-cols-md-2 row-cols-sm-1 px-4  mx-5  gy-2 justify-content-around flex-row-reverse mt-5 ">
+    <div class="d-flex flex-column align-items-end  gap-1 ">
+      <div class=" d-flex align-items-center  justify-content-center mt-3 ">
+        <p class=" newComplaint ">الشكاوي الجديدة</p>
+      </div>
+    </div>
+                           <!-- Date Filter-->
+
+    <div class=" d-flex flex-row align-items-center flex-row-reverse  gap-1 ">
+      <div class=" d-flex col-3 align-items-end  justify-content-end mt-3">
+        <p class=" filter  ">التاريخ</p>
+      </div>
+      <div class="col-9">
+        <select class="w-100 rounded p-2 border-0  selectbox" name="date">
+          <option value="الكل">الكل</option>
+          <option value="الامس">الامس</option>
+          <option value="اليوم">اليوم</option>
+          <option value="الاسبوع السابق">الاسبوع السابق</option>
+          <option value="الشهر السابق">الشهر السابق</option>
+
+        </select>
+      </div>
+    </div>
+                          <!--Type filter-->
+
+    <div class=" d-flex flex-row align-items-center flex-row-reverse gap-1 ">
+      <div class=" d-flex col-3 align-items-end  justify-content-end mt-3  ">
+        <p class=" filter "> التصنيف</p>
+      </div>
+      <div class="col-9">
+        <select class="w-100 rounded p-2 border-0 selectbox" name="type">
+          <option value="الكل">الكل</option>
+          <option value="شكوي 1">شكوي 1</option>
+          <option value="شكوي 2">شكوي 2</option>
+        </select>
+      </div>
+    </div>
+                                 <!-- State Filter-->
+    <div class=" d-flex flex-row align-items-center flex-row-reverse gap-1  ">
+      <div class=" d-flex col-3 align-items-end  justify-content-end mt-3">
+        <p class=" filter">الحالة</p>
+      </div>
+      <div class="col-9">
+        <select class="w-100 rounded p-2 border-0 selectbox" name="state">
+          <option value="الكل">الكل</option>
+          <option value="تم قبولها">تم قبولها</option>
+          <option value="غير مقبولة">غير مقبولة</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+                         <!--Complaint Table -->
+
+  <div class="mt-3 d-flex align-items-center  justify-content-center">
+    <div class="table-responsive my-5 ">
+      <table class=" text-center ">
+        <thead>
+          <tr>
+            <td>رقم الشكوي</td>
+            <td>نوع الشكوي</td>
+            <td>تاريخ الشكوي</td>
+            <td>المدينة</td>
+            <td>الادارة</td>
+            <td>الحالة</td>
+            <td>عرض</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let complaint of complaints" class="rows" [ngClass]="{'active':complaint.show === true}">
+            <th>{{complaint.id}}</th>
+            <td>{{complaint.complaintType}}</td>
+            <td>{{complaint.complaintDate}}</td>
+            <td>{{complaint.city}}</td>
+            <td>{{complaint.administration}}</td>
+            <td style="color: #FFAB5F">{{complaint.stats}}</td>
+            <td *ngIf="complaint.show=== true"> <i class='bx bx-show' style="color: #3485AA;"></i></td>
+            <td>
+              <p *ngIf="complaint.show=== false"> <i class='bx bx-show'></i></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

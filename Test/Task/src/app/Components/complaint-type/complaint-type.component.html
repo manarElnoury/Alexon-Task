@@ -1,0 +1,50 @@
+<div class="layout">
+
+    <div class="container-fluid header">
+                    <!-- setting buttons-->
+        <div class="Rectangle1">
+            <div class="headerBtns">
+                <button class="btn1"><span>AR</span></button>
+                <button class="btn2">
+                    <fa-icon class="specialIcons faBell bellIcon" [icon]="fabell"></fa-icon>
+                </button>
+            </div>
+                 <!-- page logo-->
+            <div class="d-flex justify-content-end mx-5 logo">
+                <img class="mx-5 " src="assets/images/download 1.png">
+            </div>
+        </div>
+
+    </div>
+                <!-- complaint Type-->
+    <div class="complaintType">
+        <p class="text-center ">اختر نوع الشكوي</p>
+    </div>
+                <!-- complaints-->
+    <div class="container text-center justify-content-center my-5 pt-2 px-5 ">
+        <div class=" container row row-cols-lg-5 row-cols-md-2 row-cols-sm-1 gx-lg-5  gy-4 justify-content-around mx-2">
+ 
+            <div *ngFor="let complaint of complaints" class=" text-center ">
+                <div (click)="selectedComplaint = complaint.id" [ngClass]="{'active': selectedComplaint === complaint.id}" class="complaint d-flex flex-column align-items-center pt-4 gap-1 ">
+
+                    <div class="icons d-flex align-items-center  justify-content-center mt-3">
+                        <i [class]='complaint.icon'></i>
+                    </div>
+                    <div class="title">
+                    <p class="text-center px-lg-3 px-md-0 ">{{ complaint.title}}</p>
+                </div>
+                </div>
+            </div>
+
+        </div>
+  
+    </div>
+              <!-- confirm button-->
+    <div class=" d-flex align-items-center justify-content-center text-center">
+        <div class=" col-lg-3 col-md-6  col-sm-10 text-center d-flex align-items-center justify-content-center" >
+            <button [disabled]="!selectedComplaint" class="confirmbtn " [ngClass]="{'active': selectedComplaint  }"(click)="confirm()">تاكيد</button>
+        </div>
+    </div>
+     
+
+</div>
